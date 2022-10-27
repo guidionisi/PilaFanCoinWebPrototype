@@ -1,0 +1,29 @@
+header {
+  background-color: #ffbb34;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-user {
+  display: flex;
+  gap: 40px;
+  justify-content: space-between;
+}
+
+.header-user a {
+  display: block;
+  text-align: end;
+}
+
+.header h1 {
+  font-size: 3.5rem;
+}
+.header-user span {
+  font-size: 1.25rem;
+}

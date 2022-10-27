@@ -1,0 +1,138 @@
+.main-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  /* gap: 60px; */
+  width: 920px;
+  padding: 60px;
+  background-color: #f4f4f4;
+}
+
+.card {
+  background-color: #e9e9e9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 280px;
+  border-radius: 5px;
+  margin-bottom: 40px;
+}
+.card span {
+  display: block;
+  line-height: 1;
+}
+.card-cifra {
+  font-size: 2rem;
+  align-self: flex-start;
+  padding-left: 8px;
+}
+.card-valor {
+  font-size: 2.25rem;
+  align-self: center;
+  padding-top: 16px;
+  padding-bottom: 24px;
+}
+.card-descricao {
+  font-size: 1rem;
+  align-self: flex-start;
+  text-transform: uppercase;
+  box-sizing: border-box;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 8px;
+  width: 100%;
+  border-radius: 0 0 5px 5px;
+}
+
+.cor-patrimonio {
+  background-color: #ff575746;
+}
+.cor-pilas {
+  background-color: #ffbb3446;
+}
+.cor-saldo {
+  background-color: #4fff5646;
+}
+
+.cotacao {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 40px;
+}
+.cotacao-pila {
+  background-color: #ffbb34;
+  border-radius: 5px 0 0 5px;
+  padding: 40px;
+  font-size: 4rem;
+  text-align: center;
+}
+.cotacao-real {
+  background-color: #e6d5b8;
+  border-radius: 0px 5px 5px 0;
+  padding: 40px;
+  font-size: 4rem;
+  text-align: center;
+}
+
+.operacao-container {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  justify-content: space-evenly;
+  margin-bottom: 40px;
+}
+.operacao-item {
+  background-color: #e9e9e9;
+  padding: 24px;
+  padding-right: 32px;
+  padding-left: 32px;
+  color: #23211d;
+  border-radius: 5px;
+}
+.operacao-item h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 24px;
+  letter-spacing: 0.01em;
+}
+.operacao-item span {
+  font-size: 1.5rem;
+  padding-right: 12px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+.operacao-item input {
+  height: 36px;
+  width: 160px;
+  font-size: 1.25rem;
+  background-color: #d9d9d9;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}
+.error-msg {
+  display: none;
+  color: red;
+  font-weight: 600;
+  padding-top: 12px;
+  text-align: center;
+}
+.botao {
+  padding: 8px 16px;
+  width: 100%;
+  background: #d9d9d9;
+  border-radius: 4px;
+  color: #2e2e2e;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+
+.evolucao {
+  display: flex;
+  gap: 32px;
+}
+
+.none {
+  display: none;
+}

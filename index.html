@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CriptoPila</title>
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/header.css">
+
+    <link rel="stylesheet" href="./css/home.css">
+</head>
+
+<body>
+    <header>
+        <div class="container header">
+            <h1>PILAFANCOIN</h1>
+            <div class="header-user">
+                <div>
+                    <span>Olá, </span>
+                    <span id="user-nome">nome do usuário</span>
+                    <a href="/">Sair</a>
+                </div>
+                <img src="./img/person48dp.svg" alt="Foto do usuário">
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="main-grid container">
+            <div class="main-cards">
+                <div class="card">
+                    <span class="card-cifra">R$</span>
+                    <span class="card-valor" id="user-patrimonio">1330,00</span>
+                    <span class="card-descricao cor-patrimonio">Patrimônio</span>
+                </div>
+                <div class="card">
+                    <span class="card-cifra">PL$</span>
+                    <span class="card-valor" id="user-pila">650,00</span>
+                    <span class="card-descricao cor-pilas">Pilas</span>
+                </div>
+                <div class="card">
+                    <span class="card-cifra">R$</span>
+                    <span class="card-valor" id="user-real">30,00</span>
+                    <span class="card-descricao cor-saldo">Saldo disponível</span>
+                </div>
+                <div class="none" id="user-doc-id">armazena o id do documento do usuário logado vindo do BD</div>
+            </div>
+
+            <div class="">
+                <h1>Cotação</h1>
+                <div class="cotacao">
+                    <span class="cotacao-pila">1 PL</span>
+                    <span class="cotacao-real" id="cotacao-real">recebe o valor da cotação</span>
+                    <span class="nones" id="montante-real">armazena o valor vindo do bd, mas fica encondida na tela</span>
+                    <span class="nones" id="montante-pila">armazena o valor vindo do bd, mas fica encondida na tela</span>
+
+                </div>
+                <div class="operacao-container">
+                    <div class="operacao-item">
+                        <h2>Quero comprar</h2>
+                        <div>
+                            <span>PL$</span>
+                            <input type="number" id="comprar-pila">
+                        </div>
+                        <button type="button" class="botao" onclick="queroComprar()">Comprar</button>
+                        <div class="error-msg" id="error-msg-comprar">Saldo insuficiente</div>
+                    </div>
+                    <div class="operacao-item">
+                        <h2>Quero vender</h2>
+                        <div>
+                            <span>PL$</span>
+                            <input type="number" id="vender-pila">
+                        </div>
+                        <button type="button" class="botao" onclick="queroVender()">Vender</button>
+                        <div class="error-msg" id="error-msg-vender">Saldo insuficiente</div>
+                    </div>
+                </div>
+
+                <article>
+                    <h1>Evolução da moeda</h1>
+                    <div class="evolucao">
+                        <ul class="lista-evolucao-data">
+                            <li>28/09/2022</li>
+                            <li>31/09/2022</li>
+                            <li>02/10/2022</li>
+                            <li>03/10/2022</li>
+                            <li>04/10/2022</li>
+                            <li>05/10/2022</li>
+                            <li>06/10/2022</li>
+                        </ul>
+                        <ul class="lista-evolucao-hora">
+                            <li>13:44</li>
+                            <li>12:03</li>
+                            <li>13:44</li>
+                            <li>12:23</li>
+                            <li>09:03</li>
+                            <li>16:01</li>
+                            <li>12:23</li>
+
+                        </ul>
+                        <ul class="lista-evolucao-cotacao">
+                            <li>1,98</li>
+                            <li>1,96</li>
+                            <li>1,89</li>
+                            <li>2,03</li>
+                            <li>2,12</li>
+                            <li>1,96</li>
+                            <li>1,89</li>
+                        </ul>
+                    </div>
+                </article>
+
+        </section>
+    </main>
+
+</body>
+
+<script src="https://www.gstatic.com/firebasejs/9.11.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.11.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.11.0/firebase-firestore-compat.js"></script>
+
+<script src="./js/util.js"></script>
+<script src="./js/firebase-init.js"></script>
+<script src="./js/banco-de-dados.js"></script>
+
+
+
+
+</html>
