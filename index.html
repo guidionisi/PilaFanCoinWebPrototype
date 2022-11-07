@@ -5,129 +5,60 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CriptoPila</title>
-    <link rel="stylesheet" href="./css/global.css">
-    <link rel="stylesheet" href="./css/header.css">
+    <!-- fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600&family=Noto+Sans:wght@400;500;700&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+    <!-- css     -->
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/global-index.css">
+    <link rel="stylesheet" href="./css/componentes.css">
 
-    <link rel="stylesheet" href="./css/home.css">
+    <title>Login-CriptoEdu</title>
 </head>
 
 <body>
-    <header>
-        <div class="container header">
-            <h1>PILAFANCOIN</h1>
-            <div class="header-user">
-                <div>
-                    <span>Olá, </span>
-                    <span id="user-nome">nome do usuário</span>
-                    <a href="/">Sair</a>
-                </div>
-                <img src="./img/person48dp.svg" alt="Foto do usuário">
+    <article class="formulario-bg">
+        <!-- <a href="https://www.flaticon.com/free-icons/piggybank" title="piggybank icons">Piggybank icons created by Prosymbols - Flaticon</a> -->
+        <img src="./img/piggybank.png" alt="imagem do cofrinho" height="96px" width="96px">
+
+        <form action="./">
+            <div class="form-item">
+                <label for="email">E-mail</label>
+                <input type="text" id="email" name="email" placeholder="seu@email.com" onchange="onChangeEmail()">
+                <div class="error" id="email-vazio">O e-mail é obrigatório.</div>
+                <div class="error" id="email-invalido">Digite um e-mail válido.</div>
             </div>
-        </div>
-    </header>
-    <main>
-        <section class="main-grid container">
-            <div class="main-cards">
-                <div class="card">
-                    <!--recebe o valor do patrimônio-->
-                    <span class="card-cifra">R$</span>
-                    <span class="card-valor" id="user-patrimonio"></span>
-                    <span class="card-descricao cor-patrimonio">Patrimônio</span>
-                </div>
-                <div class="card">
-                    <!--recebe a quantidade de pilas do usuário-->
-                    <span class="card-cifra">PL$</span>
-                    <span class="card-valor" id="user-pila"></span>/
-                    <span class="card-descricao cor-pilas">Pilas</span>
-                </div>
-                <div class="card">
-                    <!--recebe a quantidade de reaus do usuário-->
-                    <span class="card-cifra">R$</span>
-                    <span class="card-valor" id="user-real"></span>
-                    <span class="card-descricao cor-saldo">Saldo disponível</span>
-                </div>
-                <!-- <div class="none" id="user-doc-id">armazena o id do documento do usuário logado vindo do BD</div> -->
+            <div class="form-item">
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" name="senha" placeholder="senha" onchange="onChangeSenha()">
+                <div class="error" id="senha-vazia">Senha é obrigatória</div>
             </div>
-
-            <div class="">
-                <h1>Cotação</h1>
-                <div class="cotacao">
-                    <span class="cotacao-pila">1 PL</span>
-                    <span class="cotacao-real" id="cotacao-real">recebe o valor da cotação</span>
-                    <span class="none" id="montante-real">armazena o valor vindo do bd, mas fica encondida na tela</span>
-                    <span class="none" id="montante-pila">armazena o valor vindo do bd, mas fica encondida na tela</span>
-
-                </div>
-                <div class="operacao-container">
-                    <div class="operacao-item">
-                        <h2>Quero comprar</h2>
-                        <div>
-                            <span>PL$</span>
-                            <input type="number" id="comprar-pila">
-                        </div>
-                        <button type="button" class="botao" onclick="queroComprar()">Comprar</button>
-                        <div class="error-msg" id="error-msg-comprar">Saldo insuficiente</div>
-                    </div>
-                    <div class="operacao-item">
-                        <h2>Quero vender</h2>
-                        <div>
-                            <span>PL$</span>
-                            <input type="number" id="vender-pila">
-                        </div>
-                        <button type="button" class="botao" onclick="queroVender()">Vender</button>
-                        <div class="error-msg" id="error-msg-vender">Saldo insuficiente</div>
-                    </div>
-                </div>
-
-                <article>
-                    <h1>Evolução da moeda</h1>
-                    <div class="evolucao">
-                        <ul class="lista-evolucao-data">
-                            <li>28/09/2022</li>
-                            <li>31/09/2022</li>
-                            <li>02/10/2022</li>
-                            <li>03/10/2022</li>
-                            <li>04/10/2022</li>
-                            <li>05/10/2022</li>
-                            <li>06/10/2022</li>
-                        </ul>
-                        <ul class="lista-evolucao-hora">
-                            <li>13:44</li>
-                            <li>12:03</li>
-                            <li>13:44</li>
-                            <li>12:23</li>
-                            <li>09:03</li>
-                            <li>16:01</li>
-                            <li>12:23</li>
-
-                        </ul>
-                        <ul class="lista-evolucao-cotacao">
-                            <li>1,98</li>
-                            <li>1,96</li>
-                            <li>1,89</li>
-                            <li>2,03</li>
-                            <li>2,12</li>
-                            <li>1,96</li>
-                            <li>1,89</li>
-                        </ul>
-                    </div>
-                </article>
-
-        </section>
-    </main>
+            <div>
+                <button type="button" class="clear" id="botao-recuperar" disabled="true" onclick="recuperarSenha()">Esqueceu senha?</button>
+            </div>
+            <div>
+                <button type="button" class="solid" id="botao-entrar" disabled="true" onclick="login()">Entrar</button>
+            </div>
+            <div>
+                <button type="button" class="outline" onclick="registrar()">Registrar</button>
+            </div>
+        </form>
+    </article>
 
 </body>
 
-<script src="https://www.gstatic.com/firebasejs/9.11.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.11.0/firebase-auth-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.11.0/firebase-firestore-compat.js"></script>
-
-<script src="./js/util.js"></script>
+<!-- Firebase -->
+<!-- carrega o arquivo de configuração do firebase -->
+<script src="https://www.gstatic.com/firebasejs/9.10.0/firebase-app-compat.js"></script>
+<!-- carrega as funções de crud do firebase auth -->
+<script src="https://www.gstatic.com/firebasejs/9.10.0/firebase-auth-compat.js"></script>
+<!-- configurações dadas pelo firebase na criação do projeto -->
 <script src="./js/firebase-init.js"></script>
-<script src="./js/banco-de-dados.js"></script>
 
-
-
+<!-- scripts -->
+<script src="./js/index.js"></script>
+<script src="./js/validations.js"></script>
+<script src="./js/loading.js"></script>
 
 </html>

@@ -1,0 +1,20 @@
+img {
+  max-width: 96px;
+  object-fit: contain;
+  margin-bottom: 24px;
+}
+form {
+  width: 300px;
+}
+
+.form-item {
+  margin-bottom: 10px;
+}
+label {
+  display: block;
+  font-weight: 400;
+}
+
+input {
+  border: none;
+}

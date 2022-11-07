@@ -1,20 +1,48 @@
-autenticacao();
-getBlockchainData();
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    console.log("UID do usuário logado : ", user.uid);
+    getBlockchainData(); //carrega dados da blockchain
+    getUserData(user.uid); //carrega dados do usuário
+  } else {
+    window.location.href = "../index.html";
+  }
+});
+
+// pega o id do usuário logado passado na na url da página
+const parametros = new URLSearchParams(window.location.search);
+const uidParam = parametros.get("uid");
 
 //faz a autenticação do usuário
+// autenticacao();
+
 //chama getUserData()
+// getUserData(uidParam);
+
 function autenticacao() {
   firebase
     .auth()
     // .signInWithEmailAndPassword("lara@rambo.com", "123456")
-    .signInWithEmailAndPassword("gui@dio.com", "123456")
+    .signInWithEmailAndPassword("lara@rambo.com", "123456")
     .then((resposta) => {
       console.log("Autenticação realizada com sucesso =>", resposta.user.email);
-      const uid = resposta.user.uid; //console.log(uid);
+      //const uid = resposta.user.uid; //console.log(uid);
       getUserData(uid);
     })
     .catch((error) => {
       console.log("erro", error);
+    });
+}
+
+//faz o logout do usuário
+function logout() {
+  firebase
+    .auth()
+    .signOut()
+    .then(() => {
+      window.location.href = "../index.html";
+    })
+    .catch(() => {
+      alert("Erro ao fazer logout");
     });
 }
 
@@ -49,6 +77,7 @@ function atualizarDadosBlockchain() {
 //a função autenticacao() chama essa função passando como parâmetro o uid do usuário que fez login
 function getUserData(uid) {
   console.log("UID =>", uid);
+
   firebase
     .firestore()
     .collection("users")
@@ -159,6 +188,7 @@ function queroVender() {
 //salva dados do usuário no BD
 function updateUser(usuario) {
   const uid = firebase.auth().currentUser.uid;
+
   firebase
     .firestore()
     .collection("users")

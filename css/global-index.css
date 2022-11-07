@@ -1,0 +1,61 @@
+/* componentes globais */
+html {
+  font-family: "FiraSans", "Arial", "Sans-serif";
+}
+body {
+  margin: 0px;
+  padding: 0px;
+}
+h1,
+h2,
+p {
+  margin: 0px;
+  padding: 0px;
+}
+
+/* mensagem de erro */
+.error {
+  color: rgb(230, 63, 63);
+  background-color: #00ff5f;
+  font-size: 80%;
+  display: none;
+}
+
+/* formatação do formulário */
+.form-item {
+  margin-bottom: 10px;
+}
+.formulario-bg {
+  margin: 0 auto;
+  height: 100vh;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #00ff5f;
+}
+input,
+button {
+  padding: 10px;
+  width: -webkit-fill-available;
+  border-radius: 2px;
+}
+
+/* componenete loading - bloqueia a tela durante o login */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #00000099;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.loading label {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
